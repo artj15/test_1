@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content_header %} 
+{% load static %}
+<a href=""><img  class="header_logo" src="{% static logo %}"></a>  
+<ul class="menu-main">
+        <li><a href="#About">{{ menu_text_1 }}</a></li>
+        <li><a href="#Forwhom">{{ menu_text_2 }}</a></li>
+        <li><a href="">{{ menu_text_3 }}</a></li>
+        <li><a href="">{{ menu_text_4 }}</a></li>
+        <a href="{% url 'register' %}" style="color: white;" class="button_lk">{{ text_lk }}</a>
+      </ul>
+
+{% endblock %}
+{% block content_Index %} 
+<div class="MainIndex">
+    <h1 class="Main_h1">
+        <span style="color: rgb(112, 194, 185);">{{ index_h1_slice_1 }}</span> {{ index_h1_slice_2 }}
+        <span style="color: rgb(112, 194, 185);">{{ index_h1_slice_3 }}</span>
+        {{ index_h1_slice_4 }}
+    </h1>
+    <h2 class="Main_h2">
+        {{ index_h2 }}
+    </h2>
+    <p>
+        <a style="background-color: #4b3584; color: white;" href="#Freeles">Записаться на курс</a>
+        <a style="background-color: #f7af4d; color: black;" href="#Freeles">Попробовать бесплатно</a>
+        {% load static %}
+        <img class="Main_img" src="{% static index_img %}"> 
+    </p>
+    
+</div>
+{% endblock %}
+{% block content_About %}
+<div class="About">
+    <h1>{{ header }}</h1>
+    <div class="main_h" id = 'About'>
+        <p>
+                {% load static %}
+                <img class="main_h_img" src="{% static img %}">
+        </p>
+            
+        <p class="about_text">
+            {{ main_h }}
+        </p>
+        <div class="about_3_imgs">
+        <p>
+            {% load static %}
+            <img class="second_i    mg_1" src="{% static main_p_1 %}"></p>
+        <p>
+            {% load static %}
+            <img class="second_img_2" src="{% static main_p_2 %}"></p>
+        <p>
+            {% load static %}
+            <img class="second_img_3" src="{% static main_p_3 %}"></p>
+    </div>
+        <p class='about_footer'> {{ footer }}</p>
+            </div>  
+</div>
+{% endblock %}
+{% block content_Forwhom %} 
+<div class="Forwhom" id="Forwhom">
+    <h1>{{ forwhom_h1 }}</h1>
+    <h2>{{ forwhom_h2 }}</h2>
+    <table>
+        <tr>
+            <td>
+                {% load static %}
+                <img src="{% static forwhom_td_1_img %}"> 
+            </td>
+            <td>
+                {% load static %}
+                <img src="{% static forwhom_td_2_img %}"> 
+            </td>
+            
+            <td>
+                {% load static %}
+                <img src="{% static forwhom_td_3_img %}"> 
+                <img  class="Bike" src = "{% static forwhom_td_3_img_byce %}">
+            </td>
+            <td>
+                {% load static %}
+                <img src="{% static forwhom_td_4_img %}"> 
+            </td>
+        </tr>
+        <tr class="Forwhom_tr">
+            <td>
+                {{ forwhom_td_1 }}
+            </td>
+            <td>
+                {{ forwhom_td_2 }}
+            </td>
+            <td>
+                {{ forwhom_td_3 }}
+            </td>
+            <td>
+                {{ forwhom_td_4 }}
+            </td>
+        </tr>
+        
+    </table>
+</div>
+{% endblock %}
+{% block content_Freeles %} 
+<div class="Freeles" id="Freeles">
+
+    <p class="Freeles_left_1">
+        <span style="margin-right: 85%;"> {{ text_left_1 }}</span>
+        <span style="margin: 0% 0% 0% 55%; border: 3px solid black;">Ваши данные</span>    
+    </p>
+    <p class="line"></p>
+    <p class="Freeles_left_2">{{ text_left_2 }}</p>
+    <p class="Freeles_left_3">{{ text_left_3 }}</p>
+    <form class="Form">
+        <input type="text" name = 'email' size="50" placeholder="Электронная почта" style="color:#000; border:1px solid #000; background-color:#fff; border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;font-size:16px;font-weight:400;height:50px;">
+        <input type="text" name = 'first_name' size="50" placeholder="Имя" style="color:#000; border:1px solid #000; background-color:#fff; border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px;font-size:16px;font-weight:400;height:50px;">
+        <input type="submit" value="Записаться" class="Freeles_button">
+    </form>
+</div>  
+{% endblock %}
